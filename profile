@@ -1,27 +1,37 @@
-export PATH=/Users/anoop/Projects/bin:/opt/local/sbin:/opt/local/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
+export MANPATH=/opt/local/man:$MANPATH
 
-alias b="ssh bridgeway.joyent.us"
-alias ey="ssh app.graffit.io"
-alias red="ssh red"
+export DEV_SOCKET="/opt/local/var/run/mysql5/mysqld.sock"
+export TEST_SOCKET="/opt/local/var/run/mysql5/mysqld.sock"
 
-alias mysql="mysql5 -u root"
-alias rails="rails -d mysql"
+alias e="emacsclient -n"
+alias di="svn di -x -w"
+export SVN_EDITOR="emacsclient"
 
-alias gri="cd ~/Projects/graffitio/iphone"
-alias grw="cd ~/Projects/graffitio/www"
-alias grm="mysql graffitio_development"
+alias ls='ls -G'
 
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;33'
 
-bscp () { scp "$1" anoop@bridgeway.joyent.us:$2 ; }
+bind "set completion-ignore-case on"
 
-. ~/Projects/z/z.sh
+source ~/.gilt
 
-function parse_git_dirty {
-  [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
-}
+alias pull='git pull'
+alias gpl='git pull'
 
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/(\1$(parse_git_dirty))/"
-}
+alias co='git checkout'
+alias gc='git checkout'
 
-PS1="\h:\W\$(parse_git_branch) \u\$ "
+alias st='git status'
+alias gs='git status'
+
+alias di='git diff'
+alias gd='git diff'
+
+alias ci='git commit'
+
+source /opt/local/share/doc/git-core/contrib/completion/git-completion.bash
+complete -o default -o nospace -F _git_checkout gco
+
+export PS1="\[\033[38m\]\u:\[\033[01;34m\]\w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] "
