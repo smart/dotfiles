@@ -1,0 +1,16 @@
+[user]
+  name = Michael Nutt
+  email = michael@nuttnet.net
+[merge]
+  summary = false
+[color]
+  diff = auto
+  status = auto
+  interactive = auto
+  branch = auto
+[branch]
+  autosetupmerge = true
+[github]
+  user = mnutt
+[push]
+  default = current
