@@ -1,4 +1,4 @@
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/web/tools/bin:$PATH
 export MANPATH=/opt/local/man:$MANPATH
 
 export DEV_SOCKET="/opt/local/var/run/mysql5/mysqld.sock"
@@ -15,7 +15,7 @@ export GREP_COLOR='1;33'
 
 bind "set completion-ignore-case on"
 
-source ~/.gilt
+source ~/.gilt_profile
 
 alias pull='git pull'
 alias gpl='git pull'
@@ -34,4 +34,4 @@ alias ci='git commit'
 source /opt/local/share/doc/git-core/contrib/completion/git-completion.bash
 complete -o default -o nospace -F _git_checkout gco
 
-export PS1="\[\033[38m\]\u:\[\033[01;34m\]\w \[\033[31m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] "
+export PS1="\[\033[38m\]\u:\[\033[01;36m\]\w \[\033[35m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] "
