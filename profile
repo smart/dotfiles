@@ -17,15 +17,15 @@ bind "set completion-ignore-case on"
 
 source ~/.gilt_profile
 
-alias pull='git pull'
-alias gpl='git pull'
+alias p="/Volumes/Personal/Projects"
+alias gpr='git pull'
 
 alias co='git checkout'
 alias gc='git checkout'
 
 alias st='git status'
 alias gs='git status'
-
+alias gits='git status'
 alias di='git diff'
 alias gd='git diff'
 
