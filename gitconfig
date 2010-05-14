@@ -1,6 +1,6 @@
 [user]
-  name = Michael Nutt
-  email = michael@nuttnet.net
+  name = Steve Martocci
+  email = smartocci@gmail.com
 [merge]
   summary = false
 [color]
@@ -11,6 +11,6 @@
 [branch]
   autosetupmerge = true
 [github]
-  user = mnutt
+  user = smartocci
 [push]
   default = current
