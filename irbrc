@@ -18,8 +18,3 @@ Wirble.colorize
    RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
  end
 
-if ENV.include?('RAILS_ENV')
-  def me
-    User.find_by_email_address(Subsite.default, "smartocci@gilt.com")
-  end
-end
